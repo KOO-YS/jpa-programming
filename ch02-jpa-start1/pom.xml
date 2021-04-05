@@ -7,6 +7,21 @@
     <groupId>jpabook.start</groupId>
     <artifactId>ch02-jpa-start1</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>4.3.10.Final</version>
+        </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>1.4.187</version>
+        </dependency>
+
+    </dependencies>
 
 </project>
