@@ -4,14 +4,24 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "MEMBER")
+
+@Table(name = "MEMBER", uniqueConstraints = {
+        @UniqueConstraint(
+                name = "NAME_AGE_UNIQUE",
+                columnNames = {"NAME", "AGE"})
+})  // means ::: 유니크 제약조건. 이런 기능들은 단지 DDL을 자동 생성할 때만 사용되고 JPA의 실행로직에는 영향을 주지 않는다
+/*
+    alter table MEMBER
+    add constraint NAME_AGE_UNIQUE  unique (NAME, age)
+*/
 public class Member {
 
     @Id
     @Column(name = "ID")
     private String id;
 
-    @Column(name = "NAME")
+    @Column(name = "NAME", nullable = false, length = 10)
+    // means ::: not null 제약조건 추가, 문자의 크기가 10자리로 제한
     private String username;
 
     private Integer age;
